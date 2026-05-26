@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>EcoSort Enterprise</title>
+<link rel="stylesheet" href="styles.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?
+family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/
+chart.umd.js"></script>
+</head>
+<body>
+<header class="navbar">
+<div class="logo">
+EcoSort
+</div>
+<nav>
+<a href="#hero">Inicio</a>
+<a href="#product">Producto</a>
+<a href="#metrics">Impacto</a>
+<a href="#dashboard">Dashboard</a>
+<a href="#contact">Contacto</a>
+</nav>
+</header>
+<section class="hero" id="hero">
+<div class="hero-left">
+<span class="hero-tag">
+SMART RECYCLING SYSTEM
+</span>
+<h1>
+La nueva generación
+        del reciclaje inteligente.
+</h1>
+<p>
+        Automatización sustentable impulsada por sensores,
+        métricas inteligentes y monitoreo en tiempo real.
+</p>
+<div class="hero-buttons">
+<button class="primary-btn" onclick="scrollToSection('dashboard')">
+          Ver Dashboard
+</button>
+<button class="secondary-btn" onclick="scrollToSection('product')">
+          Explorar Producto
+</button>
+</div>
+</div>
+<div class="hero-right">
+<div class="product-showcase">
+<div class="product-top"></div>
+<div class="product-body">
+<div class="product-ring"></div>
+<div class="product-core">
+            EcoSort
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="product-section" id="product">
+<div class="product-preview">
+<div class="preview-card large-preview">
+<div class="preview-screen">
+2
+<div class="screen-bar"></div>
+<div class="screen-chart"></div>
+</div>
+</div>
+</div>
+<div class="product-content">
+<span>
+        AUTOMATIZACIÓN + ANALYTICS
+</span>
+<h2>
+        Tecnología sustentable
+        diseñada para espacios modernos.
+</h2>
+<p>
+        EcoSort combina sensores inteligentes,
+        automatización mecánica y dashboards analíticos
+        para transformar la experiencia del reciclaje.
+</p>
+<div class="features-grid">
+<div class="feature-card">
+<h3>Sensores Inteligentes</h3>
+<p>Detección automática y clasificación precisa.</p>
+</div>
+<div class="feature-card">
+<h3>Dashboard IoT</h3>
+<p>Monitoreo analítico en tiempo real.</p>
+</div>
+<div class="feature-card">
+<h3>Automatización</h3>
+<p>Procesamiento rápido y eficiente.</p>
+</div>
+<div class="feature-card">
+<h3>Sostenibilidad</h3>
+<p>Reducción de residuos contaminados.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="metrics-section" id="metrics">
+<div class="metric-card">
+<h2>98.4%</h2>
+<span>Precisión Operativa</span>
+</div>
+<div class="metric-card">
+<h2>24/7</h2>
+<span>Monitoreo Inteligente</span>
+</div>
+<div class="metric-card">
+<h2>IoT</h2>
+<span>Analytics Integrado</span>
+</div>
+</section>
+<section class="dashboard-section" id="dashboard">
+<div class="dashboard-header">
+<span>
+        ECOSORT ANALYTICS
+</span>
+<h2>
+        Dashboard Inteligente
+</h2>
+<p>
+        Monitoreo y simulación de clasificación automática.
+</p>
+</div>
+<div class="dashboard-grid">
+<div class="dashboard-card simulator-card">
+<div class="card-header">
+<h3>Simulación Inteligente</h3>
+<div id="hardware-led"></div>
+</div>
+<div class="simulator-box">
+<div id="sorting-disk">
+<span id="disk-icon">🗑️</span>
+</div>
+<div id="sensor-telemetry">
+            Sistema en espera...
+</div>
+</div>
+<div class="sim-buttons">
+<button onclick="procesarResiduo('metal')">
+            ⚙️ Metal
+</button>
+<button onclick="procesarResiduo('humedo')">
+            🍎 Húmedo
+</button>
+<button onclick="procesarResiduo('seco')">
+            📄 Seco
+</button>
+</div>
+</div>
+<div class="dashboard-card analytics-card">
+<div class="card-header">
+<h3>Analytics</h3>
+<button class="reset-btn" onclick="resetDashboard()">
+            Reset
+</button>
+</div>
+<div class="kpi-grid">
+<div class="kpi-card">
+<span>Metal</span>
+<h2 id="count-metal">0</h2>
+</div>
+<div class="kpi-card">
+<span>Húmedo</span>
+<h2 id="count-humedo">0</h2>
+</div>
+<div class="kpi-card">
+<span>Seco</span>
+<h2 id="count-seco">0</h2>
+</div>
+<div class="kpi-card">
+<span>CO2</span>
+<h2 id="co2-counter">0kg</h2>
+</div>
+</div>
+<div class="chart-container">
+<canvas id="ecosortChart"></canvas>
+</div>
+</div>
+</div>
+</section>
+<section class="contact-section" id="contact">
+<div class="contact-card">
+<span>
+        CONTACTO
+</span>
+<h2>
+        Solicita una demostración.
+</h2>
+<form>
+<input type="text" placeholder="Nombre" />
+<input type="email" placeholder="Correo electrónico" />
+<textarea placeholder="Mensaje"></textarea>
+<button type="button" class="primary-btn">
+          Enviar Solicitud
+</button>
+</form>
+</div>
+</section>
+<footer>
+<h2>
+EcoSort Enterprise
+</h2>
+<p>
+Tecnología sustentable para un futuro inteligente.
+</p>
+</footer>
+<script src="main.js"></script>
+<script src="dashboard.js"></script>
+</body>
+</html>
